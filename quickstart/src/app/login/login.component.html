@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sign In</h3>
+                </div>
+                <div class="panel-body">
+                    <form [formGroup]="loginForm" role="form" name="loginForm" (submit)="loginUser()">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" formControlName="email" placeholder="E-mail" type="text" ([ngModel])="password" name="email">
+                                <control-messages [control]="loginForm.controls.email"></control-messages>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" formControlName="password" placeholder="Password" name="password" ([ngModel])="password" type="password">
+                                <control-messages [control]="loginForm.controls.password"></control-messages>
+                            </div>
+                            <!--<div class="checkbox">-->
+                                <!--<label>-->
+                                    <!--<input name="remember" formControlName="rememberMe" type="checkbox" value="Remember Me">Remember Me-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-lg btn-success btn-block">Login</button>
+                            <!--<a type="submit" [disabled]="!loginForm.valid" class="btn btn-lg btn-success btn-block" routerLink="/dashboard/home">Login</a>-->
+                            <a ui-sref="signup" routerLink="/signup" class="btn btn-lg btn-primary btn-block">Sign Up</a>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
